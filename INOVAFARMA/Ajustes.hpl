@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pipeline>
+  <info>
+    <name>Ajustes</name>
+    <name_sync_with_filename>Y</name_sync_with_filename>
+    <description/>
+    <extended_description/>
+    <pipeline_version/>
+    <pipeline_type>Normal</pipeline_type>
+    <parameters>
+    </parameters>
+    <capture_transform_performance>N</capture_transform_performance>
+    <transform_performance_capturing_delay>1000</transform_performance_capturing_delay>
+    <transform_performance_capturing_size_limit>100</transform_performance_capturing_size_limit>
+    <created_user>-</created_user>
+    <created_date>2025/01/01 09:46:34.975</created_date>
+    <modified_user>-</modified_user>
+    <modified_date>2025/01/01 09:46:34.975</modified_date>
+  </info>
+  <notepads>
+  </notepads>
+  <order>
+    <hop>
+      <from>Define data</from>
+      <to>D1</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Corrige Campos Produtos</from>
+      <to>D2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Corrige Campos Favorecidos</from>
+      <to>D3</to>
+      <enabled>Y</enabled>
+    </hop>
+  </order>
+  <transform>
+    <name>Corrige Campos Favorecidos</name>
+    <type>ExecSql</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <arguments>
+</arguments>
+    <connection>DESTINO</connection>
+    <delete_field/>
+    <execute_each_row>N</execute_each_row>
+    <insert_field/>
+    <quoteString>N</quoteString>
+    <read_field/>
+    <replace_variables>N</replace_variables>
+    <set_params>N</set_params>
+    <single_statement>N</single_statement>
+    <sql>UPDATE FAVORECIDO SET DATAMODIFICACAO = NOW() WHERE DATAMODIFICACAO IS NULL;
+UPDATE FAVORECIDO SET DATACADASTRO = NOW() WHERE DATACADASTRO IS NULL;
+UPDATE FAVORECIDO SET PERMITIRCREDIARIO = 1 WHERE ID_GRUPOCLIENTE = 1;
+
+UPDATE CONVENIO SET DATAMODIFICACAO = NOW() WHERE DATAMODIFICACAO IS NULL;
+UPDATE ENDERECO SET DATAMODIFICACAO = NOW() WHERE DATAMODIFICACAO IS NULL;
+
+UPDATE DEPENDENTE SET DATAMODIFICACAO = NOW();
+
+/* Atualiza para nulo o CPF/CNPJ quando houver duplicidade preservando 1 registro apenas */
+
+WITH DUPLICADOS AS (
+    SELECT F.ID, F.CPFCNPJ, 
+           ROW_NUMBER() OVER (PARTITION BY F.CPFCNPJ ORDER BY F.ID) AS RN
+    FROM FAVORECIDO F
+)
+UPDATE FAVORECIDO
+JOIN DUPLICADOS D ON FAVORECIDO.ID = D.ID
+SET FAVORECIDO.CPFCNPJ = ''
+WHERE D.RN > 1;</sql>
+    <update_field/>
+    <attributes/>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Corrige Campos Produtos</name>
+    <type>ExecSql</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <arguments>
+</arguments>
+    <connection>DESTINO</connection>
+    <execute_each_row>N</execute_each_row>
+    <quoteString>N</quoteString>
+    <replace_variables>N</replace_variables>
+    <set_params>N</set_params>
+    <single_statement>N</single_statement>
+    <sql>UPDATE PRODUTO SET NAOPREENCHERCODIGOBARRASNFE = 1 WHERE CODIGOBARRAS NOT LIKE '789%';
+UPDATE PRODUTO SET ULTIMOVALORCUSTO = VALORCUSTO;
+UPDATE PRODUTO SET ULTIMOVALORVENDA = VALORVENDA;
+UPDATE PRODUTO SET ULTIMODESCONTO = DESCONTO;
+UPDATE PRODUTO SET MEDICAMENTOFARMACIAPOPULAR = 1 WHERE VALORFARMACIAPOPULAR >0;
+UPDATE PRODUTO SET VALORFINALFARMACIAPOPULAR = VALORFARMACIAPOPULAR WHERE VALORFARMACIAPOPULAR &lt;&gt; 0.00 AND MEDICAMENTOFARMACIAPOPULAR = 1;
+UPDATE PRODUTO SET TIPOPRECO = 'MONITORADO' WHERE VALORPMC &lt;&gt; 0;
+UPDATE PRODUTO SET DESCONTOMAXIMO = DESCONTO WHERE DESCONTO >0 AND DESCONTOMAXIMO &lt; DESCONTO;
+UPDATE PRODUTO SET ID_ALIQUOTAICMS = 100 WHERE CSTICMS = '500 - ICMS COBRADO ANTERIORMENTE POR SUBSTITUIÇÃO TRIBUTÁRIA (SUBSTITUÍDO) OU POR ANTECIPAÇÃO';
+UPDATE PRODUTOFILIAL SET ID_ALIQUOTAICMS = 100 WHERE CSTICMS = '500 - ICMS COBRADO ANTERIORMENTE POR SUBSTITUIÇÃO TRIBUTÁRIA (SUBSTITUÍDO) OU POR ANTECIPAÇÃO';
+UPDATE PRODUTO SET ID_ALIQUOTAICMS = 400 WHERE CSTICMS = '400 - NÃO TRIBUTADA PELO SIMPLES NACIONAL';
+UPDATE PRODUTOFILIAL SET ID_ALIQUOTAICMS = 400 WHERE CSTICMS = '400 - NÃO TRIBUTADA PELO SIMPLES NACIONAL';
+UPDATE PRODUTO SET UNIDADESNGPC = 'CAIXA', CONTROLALOTE = 1 WHERE TIPOCLASSESNGPC IN('ANTIMICROBIANO', 'CONTROLE ESPECIAL');
+-- UPDATE PRODUTO SET DATAINICIOCONTROLADO = NOW() WHERE TIPOCLASSESNGPC IN('ANTIMICROBIANO', 'CONTROLE ESPECIAL') AND DATAINICIOCONTROLADO IS NULL AND ID IN(SELECT ID_PRODUTO_REGISTROMS FROM REGISTROMS);
+UPDATE PRODUTO SET VALORFINALFARMACIAPOPULAR = VALORFARMACIAPOPULAR WHERE VALORFARMACIAPOPULAR >0;
+UPDATE PRODUTO SET MEDICAMENTOFARMACIAPOPULAR = 1 WHERE VALORFARMACIAPOPULAR >0;
+UPDATE PRODUTO SET QUANTIDADEFARMACIAPOPULAR = 30 WHERE MEDICAMENTOFARMACIAPOPULAR = 1;
+UPDATE PRODUTO SET MARGEMLUCRO = 0.01 WHERE MARGEMLUCRO &lt;= 0;
+UPDATE PRODUTO SET CSTICMSNORMAL = '60 - ICMS COBRADO ANTERIORMENTE POR SUBSTITUIÇÃO TRIBUTÁRIA' WHERE CSTICMS = '500 - ICMS COBRADO ANTERIORMENTE POR SUBSTITUIÇÃO TRIBUTÁRIA (SUBSTITUÍDO) OU POR ANTECIPAÇÃO';
+
+/* Ncms Monofásicos*/
+
+UPDATE PRODUTO SET MONOFASICO = 1 
+WHERE (NCM IN (
+    '30029020', '30029092', '30029099', '30051010', '30066000', '34011190', '34012010', '96032100'
+) 
+OR NCM LIKE '3002101%' 
+OR NCM LIKE '3002102%' 
+OR NCM LIKE '3002103%' 
+OR NCM LIKE '3002201%' 
+OR NCM LIKE '3002202%' 
+OR NCM LIKE '3006301%' 
+OR NCM LIKE '3006302%' 
+OR NCM LIKE '3001%' 
+OR NCM LIKE '3003%' 
+OR NCM LIKE '3004%' 
+OR NCM LIKE '3303%' 
+OR NCM LIKE '3304%' 
+OR NCM LIKE '3305%' 
+OR NCM LIKE '3306%' 
+OR NCM LIKE '3307%')
+AND NCM NOT IN ('30039056', '30049046');
+UPDATE PRODUTO SET CSTPIS = '04 - OPERAÇÃO TRIBUTÁVEL MONOFÁSICA – REVENDA A ALÍQUOTA ZERO', CSTCOFINS = '04 - OPERAÇÃO TRIBUTÁVEL MONOFÁSICA – REVENDA A ALÍQUOTA ZERO' WHERE MONOFASICO = 1;
+
+/* Atualiza barras pra nulo quando houver duplicidade */
+
+WITH DUPLICADOS AS (
+    SELECT P.ID, P.CODIGOBARRAS, 
+           ROW_NUMBER() OVER (PARTITION BY P.CODIGOBARRAS ORDER BY P.ID) AS RN
+    FROM PRODUTO P
+)
+UPDATE PRODUTO
+JOIN DUPLICADOS D ON PRODUTO.ID = D.ID
+SET PRODUTO.CODIGOBARRAS = ''
+WHERE D.RN > 1;
+
+/* Remove barras duplicados */
+
+DELETE FROM CODIGOBARRAPRODUTO
+WHERE ID IN (
+    SELECT ID
+    FROM (
+        SELECT ID
+        FROM (
+            SELECT ID,
+                   ROW_NUMBER() OVER (PARTITION BY CODIGOBARRA ORDER BY ID) AS ROW_NUM
+            FROM CODIGOBARRAPRODUTO WHERE CODIGOBARRA IS NOT NULL AND CODIGOBARRA &lt;&gt; ''
+        ) AS SUBQUERY
+        WHERE SUBQUERY.ROW_NUM > 1
+    ) AS LIMIT_ONE
+);
+
+</sql>
+    <attributes/>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>D1</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>D2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>D3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Define data</name>
+    <type>ExecSql</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <arguments>
+</arguments>
+    <connection>DESTINO</connection>
+    <execute_each_row>N</execute_each_row>
+    <quoteString>N</quoteString>
+    <replace_variables>N</replace_variables>
+    <set_params>N</set_params>
+    <single_statement>N</single_statement>
+    <sql>UPDATE GRUPOPRODUTODROGARIA SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE SUBGRUPOPRODUTODROGARIA SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE CATEGORIA SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE LABORATORIO SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE GRUPOPRECO SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE SIMILAR SET DATAMODIFICACAO = NOW() WHERE ID IS NOT NULL AND DATAMODIFICACAO IS NULL;
+UPDATE UNIDADE SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE LOCALIZACAOPRODUTO SET DATAMODIFICACAO = NOW() WHERE DATAMODIFICACAO IS NULL AND ID IS NOT NULL;
+UPDATE PRODUTO SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE PRODUTO SET ULTIMAALTERACAOVALORCUSTO = NOW() WHERE ULTIMAALTERACAOVALORCUSTO IS NULL;
+UPDATE PRODUTO SET ULTIMAALTERACAODESCONTO = NOW() WHERE ULTIMAALTERACAODESCONTO IS NULL;
+UPDATE PRODUTO SET DATACADASTRO = NOW() WHERE DATACADASTRO IS NULL AND ID IS NOT NULL;
+UPDATE REGISTROMS SET DATAMODIFICACAO = NOW(), DATACADASTRO = NOW() WHERE DATAMODIFICACAO IS NULL AND ID IS NOT NULL;
+UPDATE MEDICO SET DATAMODIFICACAO = NOW() WHERE CODIGO_MIGRACAO &lt;&gt;0 AND DATAMODIFICACAO IS NULL;
+UPDATE ESPECIALIDADEMEDICA SET DATAMODIFICACAO = NOW();
+UPDATE CONTA SET DATAMODIFICACAO = NOW() WHERE ID IS NOT NULL;
+UPDATE LOTEMEDICAMENTO SET DATAMODIFICACAO = NOW() WHERE LOTE = 'INT000';
+UPDATE LOTEMEDICAMENTO SET FABRICACAO = NOW(), VALIDADE = NOW() WHERE LOTE = 'INT000' AND QUANTIDADE >0;
+UPDATE LOTEMOVIMENTO SET DATA = NOW(), DATAMODIFICACAO = NOW(), DIA = CURDATE() WHERE ORIGEM = 'IMPORTAÇÃO PRODUTO';
+UPDATE PRODUTOFILIAL SET DATAMODIFICACAO = NOW();
+UPDATE CODIGOBARRAPRODUTO SET DATAMODIFICACAO = NOW();
+UPDATE CODIGOFORNECEDOR SET DATAMODIFICACAO = NOW();</sql>
+    <attributes/>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>128</yloc>
+    </GUI>
+  </transform>
+  <transform_error_handling>
+  </transform_error_handling>
+  <attributes/>
+</pipeline>
