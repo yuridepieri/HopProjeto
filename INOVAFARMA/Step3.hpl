@@ -3165,7 +3165,7 @@ WHERE EMPRESACONVENIO = 1</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>50</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
       </field>
     </fields>
@@ -3189,7 +3189,7 @@ WHERE EMPRESACONVENIO = 1</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>100</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
       </field>
       <field>
@@ -3204,7 +3204,7 @@ WHERE EMPRESACONVENIO = 1</sql>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
       </field>
     </fields>
@@ -3230,31 +3230,79 @@ WHERE EMPRESACONVENIO = 1</sql>
         <cut_from>0</cut_from>
         <cut_to>30</cut_to>
         <in_stream_name>NOME</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>100</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOMEDETALHADO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>3</cut_to>
         <in_stream_name>UNIDADE</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>2</cut_to>
         <in_stream_name>ALIQUOTA</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>13</cut_to>
         <in_stream_name>REGISTROMS</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>13</cut_to>
         <in_stream_name>CODIGOBARRAS</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>GRUPOPRODUTO</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>LABORATORIO</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>SUBGRUPO</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>CATEGORIA</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>LOCALIZACAO</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>GRUPOPRECO</in_stream_name>
+        <out_stream_name/>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>150</cut_to>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>

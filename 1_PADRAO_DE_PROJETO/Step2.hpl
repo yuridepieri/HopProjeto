@@ -455,7 +455,7 @@ INSERT INTO GRUPOCLIENTE(ID, DATAMODIFICACAO, DESCRICAO, IDUSUARIO, IDFILIAL, RE
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
       </field>
     </fields>
@@ -479,58 +479,69 @@ INSERT INTO GRUPOCLIENTE(ID, DATAMODIFICACAO, DESCRICAO, IDUSUARIO, IDFILIAL, RE
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>100</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>20</cut_to>
         <in_stream_name>CEP</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>100</cut_to>
         <in_stream_name>CIDADE</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>2</cut_to>
         <in_stream_name>ESTADO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>ENDERECO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>10</cut_to>
+        <cut_to>15</cut_to>
         <in_stream_name>NUMERO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>COMPLEMENTO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>BAIRRO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>8</cut_to>
         <in_stream_name>TIPOENDERECO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>8</cut_to>
         <in_stream_name>FINALIDADEENDERECO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>60</cut_to>
         <in_stream_name>CAIXAPOSTAL</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -553,7 +564,7 @@ INSERT INTO GRUPOCLIENTE(ID, DATAMODIFICACAO, DESCRICAO, IDUSUARIO, IDFILIAL, RE
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>100</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
       </field>
     </fields>

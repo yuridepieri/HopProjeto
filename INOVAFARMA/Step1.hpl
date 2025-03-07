@@ -1300,16 +1300,19 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>9</cut_to>
         <in_stream_name>CODIGO_MIGRACAO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>10</cut_to>
         <in_stream_name>DATAMODIFICACAO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1332,8 +1335,9 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1356,8 +1360,9 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1380,8 +1385,9 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1404,8 +1410,9 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1454,16 +1461,19 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>9</cut_to>
         <in_stream_name>CODIGO_MIGRACAO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>10</cut_to>
         <in_stream_name>DATAMODIFICACAO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1486,13 +1496,15 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>9</cut_to>
         <in_stream_name>CODIGO_MIGRACAO</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1515,13 +1527,15 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
     <fields>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>60</cut_to>
+        <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
+        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
-        <cut_to>10</cut_to>
+        <cut_to>3</cut_to>
         <in_stream_name>UNIDADE</in_stream_name>
+        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -4056,6 +4070,10 @@ WHERE APAGADO = 'N'</sql>
         <stream_name>IDFILIAL</stream_name>
       </field>
       <field>
+        <column_name>ID</column_name>
+        <stream_name>ID</stream_name>
+      </field>
+      <field>
         <column_name>CODIGO_MIGRACAO</column_name>
         <stream_name>CODIGO_MIGRACAO</stream_name>
       </field>
@@ -4080,8 +4098,12 @@ WHERE APAGADO = 'N'</sql>
         <stream_name>IDGRUPO</stream_name>
       </field>
       <field>
-        <column_name>ID</column_name>
-        <stream_name>ID</stream_name>
+        <column_name>DATAMODIFICACAO</column_name>
+        <stream_name>DATAMODIFICACAO</stream_name>
+      </field>
+      <field>
+        <column_name>IDUSUARIO</column_name>
+        <stream_name>IDUSUARIO</stream_name>
       </field>
     </fields>
     <ignore_errors>N</ignore_errors>
