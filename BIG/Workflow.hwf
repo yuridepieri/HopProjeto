@@ -385,7 +385,7 @@
     <hop>
       <from>Var 3</from>
       <to>Step 3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>

@@ -219,11 +219,6 @@ que não são convênio no Mapper GrpCli</note>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>D</from>
-      <to>Insert Cliente</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Filter Cli</from>
       <to>Append Cli</to>
       <enabled>Y</enabled>
@@ -256,11 +251,6 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Join Filial 2</from>
       <to>Lookup GrpCli</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Merge Conv</from>
-      <to>Str Conv</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -306,16 +296,6 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Sort Cli 2</from>
       <to>Unique Cli</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort Cli</from>
-      <to>Merge Conv</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Sort Conv</from>
-      <to>Merge Conv</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -762,6 +742,31 @@ que não são convênio no Mapper GrpCli</note>
       <from>Rep Prod</from>
       <to>Cut Prod</to>
       <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Sort Conv</from>
+      <to>lookup Conv</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort Cli</from>
+      <to>lookup Conv</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>lookup Conv</from>
+      <to>Str Conv</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>D</from>
+      <to>remove codigo_migracaoconvenio</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>remove codigo_migracaoconvenio</from>
+      <to>Insert Cliente</to>
+      <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
@@ -6574,12 +6579,20 @@ ORDER BY DESCRICAO</sql>
     <connection>DESTINO</connection>
     <fields>
       <field>
+        <column_name>ID_CONVENIO</column_name>
+        <stream_name>ID_CONVENIO</stream_name>
+      </field>
+      <field>
         <column_name>DIALIMITE</column_name>
         <stream_name>DIALIMITE</stream_name>
       </field>
       <field>
         <column_name>DIAVENCIMENTO</column_name>
         <stream_name>DIAVENCIMENTO</stream_name>
+      </field>
+      <field>
+        <column_name>VALORLIMITE</column_name>
+        <stream_name>VALORLIMITE</stream_name>
       </field>
       <field>
         <column_name>MULTA</column_name>
@@ -6602,20 +6615,16 @@ ORDER BY DESCRICAO</sql>
         <stream_name>IDUSUARIO</stream_name>
       </field>
       <field>
-        <column_name>JUROSDIA</column_name>
-        <stream_name>JUROSDIA</stream_name>
-      </field>
-      <field>
-        <column_name>ID_CONVENIO</column_name>
-        <stream_name>ID_CONVENIO</stream_name>
-      </field>
-      <field>
         <column_name>MATRICULA</column_name>
         <stream_name>MATRICULA</stream_name>
       </field>
       <field>
         <column_name>REVISAO</column_name>
         <stream_name>REVISAO</stream_name>
+      </field>
+      <field>
+        <column_name>JUROSDIA</column_name>
+        <stream_name>JUROSDIA</stream_name>
       </field>
       <field>
         <column_name>BLOQUEIACOMPRA</column_name>
@@ -9575,32 +9584,6 @@ ORDER BY MEDICO_ID;</sql>
     </GUI>
   </transform>
   <transform>
-    <name>Merge Conv</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>LEFT OUTER</join_type>
-    <keys_1>
-      <key>CODIGO_MIGRACAOCONVENIO</key>
-    </keys_1>
-    <keys_2>
-      <key>COD_EMPRESA</key>
-    </keys_2>
-    <transform1>Sort Cli</transform1>
-    <transform2>Sort Conv</transform2>
-    <attributes/>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>816</yloc>
-    </GUI>
-  </transform>
-  <transform>
     <name>Null Med</name>
     <type>NullIf</type>
     <description/>
@@ -11541,92 +11524,59 @@ WHERE P.INATIVO = 'N'
       <schema_name/>
     </partitioning>
     <fields>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>COD_EMPRESA</name>
-        <rename>COD_EMPRESA</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>ID_EMPRESA</name>
-        <rename>ID_EMPRESA</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>ID_GRUPOCLIENTE</name>
-        <rename>ID_GRUPOCLIENTE</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>NOME_CONVENIO</name>
-        <rename>NOME_CONVENIO</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
+      <field>
         <name>ID</name>
         <rename>ID_CONVENIO</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
+      </field>
+      <field>
+        <name>DIALIMITE</name>
+      </field>
+      <field>
+        <name>DIAVENCIMENTO</name>
+      </field>
+      <field>
+        <name>VALORLIMITE</name>
+      </field>
+      <field>
+        <name>MULTA</name>
+      </field>
+      <field>
+        <name>MOTIVOBLOQUEIO</name>
+      </field>
+      <field>
+        <name>NUMEROMAXIMOPARCELAS</name>
+      </field>
+      <field>
+        <name>ID_EMPRESA</name>
+      </field>
+      <field>
+        <name>COD_EMPRESA</name>
+      </field>
+      <field>
+        <name>NOME_CONVENIO</name>
+      </field>
+      <field>
+        <name>IDUSUARIO_1</name>
+      </field>
+      <field>
+        <name>MATRICULA</name>
+      </field>
+      <field>
+        <name>REVISAO</name>
+      </field>
+      <field>
+        <name>JUROSDIA</name>
+      </field>
+      <field>
+        <name>BLOQUEIACOMPRA</name>
+      </field>
+      <field>
+        <name>ID_GRPCLIENTE</name>
+      </field>
+      <field>
+        <name>IDFILIAL</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <GUI>
@@ -11671,6 +11621,23 @@ WHERE P.INATIVO = 'N'
         <length>15</length>
         <precision>0</precision>
         <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>VALORLIMITE</name>
+        <rename>VALORLIMITE</rename>
+        <type>Number</type>
+        <length>15</length>
+        <precision>2</precision>
+        <conversion_mask>#.##</conversion_mask>
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale/>
         <date_format_timezone/>
@@ -11886,7 +11853,7 @@ WHERE P.INATIVO = 'N'
         <storage_type/>
       </meta>
       <meta>
-        <name>ID_GRUPOCLIENTE</name>
+        <name>ID_GRPCLIENTE</name>
         <rename>ID_GRUPOCLIENTE</rename>
         <type>String</type>
         <length>1</length>
@@ -17729,6 +17696,174 @@ FROM UNIDADE</sql>
     <GUI>
       <xloc>1744</xloc>
       <yloc>288</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>lookup Conv</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>Sort Conv</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>CODIGO_MIGRACAOCONVENIO</name>
+        <field>COD_EMPRESA</field>
+      </key>
+      <value>
+        <name>ID_EMPRESA</name>
+        <rename>ID_EMPRESA</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>COD_EMPRESA</name>
+        <rename>COD_EMPRESA</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>NOME_CONVENIO</name>
+        <rename>NOME_CONVENIO</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>CODIGO_MIGRACAOCONVENIO</name>
+        <rename>CODIGO_MIGRACAOCONVENIO</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>DATAMODIFICACAO</name>
+        <rename>DATAMODIFICACAO</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>IDUSUARIO</name>
+        <rename>IDUSUARIO</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>ID_FAVORECIDO</name>
+        <rename>ID_FAVORECIDO</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>NUMEROCARTAO</name>
+        <rename>NUMEROCARTAO</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>DIAVENCIMENTO</name>
+        <rename>DIAVENCIMENTO</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>JUROSDIA</name>
+        <rename>JUROSDIA</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+      <value>
+        <name>MULTA</name>
+        <rename>MULTA</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+      <value>
+        <name>DIALIMITE</name>
+        <rename>DIALIMITE</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>VALORLIMITE</name>
+        <rename>VALORLIMITE</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+      <value>
+        <name>NUMEROMAXIMOPARCELAS</name>
+        <rename>NUMEROMAXIMOPARCELAS</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>MATRICULA</name>
+        <rename>MATRICULA</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>REVISAO</name>
+        <rename>REVISAO</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>IDGRUPO</name>
+        <rename>IDGRUPO</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+      <value>
+        <name>BLOQUEIACOMPRA</name>
+        <rename>BLOQUEIACOMPRA</rename>
+        <default/>
+        <type>String</type>
+      </value>
+      <value>
+        <name>MOTIVOBLOQUEIO</name>
+        <rename>MOTIVOBLOQUEIO</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <attributes/>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>816</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>remove codigo_migracaoconvenio</name>
+    <type>SetValueConstant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <usevar>N</usevar>
+    <fields>
+      <field>
+        <name>CODIGO_MIGRACAOCONVENIO</name>
+        <value>0</value>
+        <mask>#</mask>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2000</xloc>
+      <yloc>656</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
