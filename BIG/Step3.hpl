@@ -106,107 +106,107 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Filter Prod</from>
       <to>Append Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter Prod</from>
       <to>Set Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Get Filial</from>
       <to>Join Filial</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Join Filial</from>
       <to>Sort Prod 2</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Join Prod</from>
       <to>Sel Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Prod</from>
       <to>Str Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Seq Prod</from>
       <to>Filter Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Set Prod</from>
       <to>Append Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sort Prod 2</from>
       <to>Unique Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Unique Prod</from>
       <to>Seq Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter Med</from>
       <to>Append Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter Med</from>
       <to>Set Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Join Filial 3</from>
       <to>Sort Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Join Med</from>
       <to>Sel Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Rep Med</from>
       <to>Cut Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Med</from>
       <to>Str Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Seq Med</from>
       <to>Filter Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Set Med</from>
       <to>Append Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sort Med</from>
       <to>Unique Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Str Med</from>
       <to>Rep Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Unique Med</from>
       <to>Seq Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Block conv</from>
@@ -401,17 +401,17 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look SGrp</from>
       <to>Look Categ</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Look Categ</from>
       <to>Look GPreco</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Look GPreco</from>
       <to>Look Lab</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Grupo</from>
@@ -441,7 +441,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Lab</from>
       <to>Look Similar</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Similaridade</from>
@@ -456,7 +456,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Similar</from>
       <to>Look Und</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>DCB</from>
@@ -466,7 +466,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Und</from>
       <to>Look Dcb</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Aliquota</from>
@@ -476,7 +476,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Dcb</from>
       <to>Look Icms</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Localizacao</from>
@@ -486,212 +486,212 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Icms</from>
       <to>Look Local</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Look Local</from>
       <to>If Null</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Null if</from>
       <to>If Null 2</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Look Grp</from>
       <to>Look SGrp</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>If Null</from>
       <to>Map CSOSN</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map CSOSN</from>
       <to>Map CSTICMS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map CSTICMS</from>
       <to>Map PIS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map PIS</from>
       <to>Map COFINS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map Lista</from>
       <to>Map Origem</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map Origem</from>
       <to>Map CFOP</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map CFOP</from>
       <to>Sel Prod 2</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Prod 2</from>
       <to>Calculator</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Calculator</from>
       <to>Ajusta Campos</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Ajusta Campos</from>
       <to>Join Filial</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter RegMS</from>
       <to>Sel RegMS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Prod 3</from>
       <to>Insert Produto</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Append Prod</from>
       <to>Fil Campos</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Seq RegMS</from>
       <to>Block RegMS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Block RegMS</from>
       <to>Insert RegistroMS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Fil Campos</from>
       <to>Filter RegMS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Fil Campos</from>
       <to>Sel Prod 3</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Get Filial 3</from>
       <to>Join Filial 3</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Med 2</from>
       <to>Join Filial 3</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Cut Med</from>
       <to>Null Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>If Null Med</from>
       <to>Map UF Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Null Med</from>
       <to>If Null Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map Controlado</from>
       <to>Null if</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Cut Prod</from>
       <to>Map Controlado</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>If Null 2</from>
       <to>Look Grp</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Especialid Base</from>
       <to>Look Especialid</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Append Med</from>
       <to>Sel Med 3</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Med 3</from>
       <to>Insert Medico</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Fil Campos</from>
       <to>Sel Prod Val Fil 2</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Prod Val Fil 2</from>
       <to>Add campos</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Add campos</from>
       <to>Seq Prod Filial</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Seq Prod Filial</from>
       <to>Block ProdFilial</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Block ProdFilial</from>
       <to>Insert ProdutoFilial</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Look Especialid</from>
       <to>Sel Med 2</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map UF Med</from>
       <to>If Null 3</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>If Null 3</from>
       <to>Look Especialid</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map COFINS</from>
       <to>Map IPI</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Map IPI</from>
       <to>Map Lista</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Filter Conv</from>
@@ -711,17 +711,17 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Sel RegMS</from>
       <to>Seq RegMS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Produto</from>
       <to>Join Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Gen Prod</from>
       <to>Join Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Sel Conv</from>
@@ -746,22 +746,22 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Medicos</from>
       <to>Join Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Gen Med</from>
       <to>Join Med</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Str Prod</from>
       <to>Rep Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Rep Prod</from>
       <to>Cut Prod</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
   </order>
   <transform>
@@ -3166,8 +3166,7 @@ FROM CIDADE</sql>
 		CIDADE,
 		NUMERO1		NUMERO,
 		COMPLEMENTO
-FROM CLIENTES
-WHERE APAGADO = 'N'</sql>
+FROM CLIENTES;</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -3281,85 +3280,71 @@ WHERE EMPRESACONVENIO = 1</sql>
         <cut_from>0</cut_from>
         <cut_to>30</cut_to>
         <in_stream_name>NOME</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>NOMEDETALHADO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>3</cut_to>
         <in_stream_name>UNIDADE</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>2</cut_to>
         <in_stream_name>ALIQUOTA</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>13</cut_to>
         <in_stream_name>REGISTROMS</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>13</cut_to>
         <in_stream_name>CODIGOBARRAS</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>LABORATORIO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>GRUPOPRODUTO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>LABORATORIO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>SUBGRUPO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>CATEGORIA</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>LOCALIZACAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>GRUPOPRECO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>SIMILAR</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -9546,7 +9531,7 @@ FROM LOCALIZACAOPRODUTO</sql>
         <target_value>1</target_value>
       </field>
       <field>
-        <source_value>11</source_value>
+        <source_value>4</source_value>
         <target_value>1</target_value>
       </field>
     </fields>

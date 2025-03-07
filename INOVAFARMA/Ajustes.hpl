@@ -50,11 +50,8 @@
     <arguments>
 </arguments>
     <connection>DESTINO</connection>
-    <delete_field/>
     <execute_each_row>N</execute_each_row>
-    <insert_field/>
     <quoteString>N</quoteString>
-    <read_field/>
     <replace_variables>N</replace_variables>
     <set_params>N</set_params>
     <single_statement>N</single_statement>
@@ -78,7 +75,6 @@ UPDATE FAVORECIDO
 JOIN DUPLICADOS D ON FAVORECIDO.ID = D.ID
 SET FAVORECIDO.CPFCNPJ = ''
 WHERE D.RN > 1;</sql>
-    <update_field/>
     <attributes/>
     <GUI>
       <xloc>192</xloc>
@@ -99,8 +95,11 @@ WHERE D.RN > 1;</sql>
     <arguments>
 </arguments>
     <connection>DESTINO</connection>
+    <delete_field/>
     <execute_each_row>N</execute_each_row>
+    <insert_field/>
     <quoteString>N</quoteString>
+    <read_field/>
     <replace_variables>N</replace_variables>
     <set_params>N</set_params>
     <single_statement>N</single_statement>
@@ -117,6 +116,7 @@ UPDATE PRODUTOFILIAL SET ID_ALIQUOTAICMS = 100 WHERE CSTICMS = '500 - ICMS COBRA
 UPDATE PRODUTO SET ID_ALIQUOTAICMS = 400 WHERE CSTICMS = '400 - NÃO TRIBUTADA PELO SIMPLES NACIONAL';
 UPDATE PRODUTOFILIAL SET ID_ALIQUOTAICMS = 400 WHERE CSTICMS = '400 - NÃO TRIBUTADA PELO SIMPLES NACIONAL';
 UPDATE PRODUTO SET UNIDADESNGPC = 'CAIXA', CONTROLALOTE = 1 WHERE TIPOCLASSESNGPC IN('ANTIMICROBIANO', 'CONTROLE ESPECIAL');
+UPDATE PRODUTO SET DIASDETRATAMENTO = 30 WHERE TIPOCLASSESNGPC IN('ANTIMICROBIANO', 'CONTROLE ESPECIAL') AND DIASDETRATAMENTO = 0;
 -- UPDATE PRODUTO SET DATAINICIOCONTROLADO = NOW() WHERE TIPOCLASSESNGPC IN('ANTIMICROBIANO', 'CONTROLE ESPECIAL') AND DATAINICIOCONTROLADO IS NULL AND ID IN(SELECT ID_PRODUTO_REGISTROMS FROM REGISTROMS);
 UPDATE PRODUTO SET VALORFINALFARMACIAPOPULAR = VALORFARMACIAPOPULAR WHERE VALORFARMACIAPOPULAR >0;
 UPDATE PRODUTO SET MEDICAMENTOFARMACIAPOPULAR = 1 WHERE VALORFARMACIAPOPULAR >0;
@@ -177,6 +177,7 @@ WHERE ID IN (
 );
 
 </sql>
+    <update_field/>
     <attributes/>
     <GUI>
       <xloc>192</xloc>

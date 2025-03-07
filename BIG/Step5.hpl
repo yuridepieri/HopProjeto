@@ -1819,14 +1819,22 @@ ORDER BY CODIGO_MIGRACAO</sql>
     </partitioning>
     <fields>
       <field>
+        <currency/>
+        <decimal/>
         <format>yyyy/MM/dd HH:mm:ss</format>
+        <group/>
         <length>-1</length>
         <name>DATAMODIFICACAO</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>IDUSUARIO</name>
         <nullif>0</nullif>
@@ -1835,7 +1843,10 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Integer</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
         <format>#</format>
+        <group/>
         <length>-1</length>
         <name>LOTE</name>
         <nullif>INT000</nullif>
@@ -1844,29 +1855,46 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
         <format>yyyy-MM-dd HH:mm:ss</format>
+        <group/>
         <length>-1</length>
         <name>FABRICACAO</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
         <format>yyyy-MM-dd HH:mm:ss</format>
+        <group/>
         <length>-1</length>
         <name>VALIDADE</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>DESCRICAO</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>PRECOMAXIMO</name>
         <nullif>0</nullif>
@@ -1875,14 +1903,22 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>ISINTERNO</name>
-        <nullif>0</nullif>
+        <nullif>1</nullif>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>REVISAO</name>
         <nullif>0</nullif>
@@ -1891,14 +1927,22 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Integer</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
         <format>yyyy-MM-dd HH:mm:ss</format>
+        <group/>
         <length>-1</length>
         <name>DATAINICIAL</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>QUANTIDADEINICIAL</name>
         <nullif>0</nullif>
@@ -1907,6 +1951,10 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Number</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>IDGRUPO</name>
         <nullif>0</nullif>
@@ -1915,13 +1963,22 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Integer</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>ID_REGISTROMS</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>Integer</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
         <length>-1</length>
         <name>CUSTOMEDIOPONDERADOINICIAL</name>
         <nullif>0</nullif>
