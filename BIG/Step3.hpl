@@ -129,11 +129,6 @@ que não são convênio no Mapper GrpCli</note>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Rep Prod</from>
-      <to>Cut Prod</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Sel Prod</from>
       <to>Str Prod</to>
       <enabled>Y</enabled>
@@ -151,11 +146,6 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Sort Prod 2</from>
       <to>Unique Prod</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Str Prod</from>
-      <to>Rep Prod</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -761,6 +751,16 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Gen Med</from>
       <to>Join Med</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Str Prod</from>
+      <to>Rep Prod</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Rep Prod</from>
+      <to>Cut Prod</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -3167,7 +3167,7 @@ FROM CIDADE</sql>
 		NUMERO1		NUMERO,
 		COMPLEMENTO
 FROM CLIENTES
--- WHERE CLIENTES_ID = 6765002</sql>
+WHERE APAGADO = 'N'</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -3252,6 +3252,11 @@ WHERE EMPRESACONVENIO = 1</sql>
         <cut_from>0</cut_from>
         <cut_to>4</cut_to>
         <in_stream_name>TIPOCR</in_stream_name>
+      </field>
+      <field>
+        <cut_from>0</cut_from>
+        <cut_to>60</cut_to>
+        <in_stream_name>DESCRICAO</in_stream_name>
       </field>
     </fields>
     <attributes/>
@@ -10480,7 +10485,7 @@ WHERE P.INATIVO = 'N'
         <case_sensitive>N</case_sensitive>
         <in_stream_name>NOMEDETALHADO</in_stream_name>
         <is_unicode>N</is_unicode>
-        <replace_by_string>U</replace_by_string>
+        <replace_by_string>A</replace_by_string>
         <replace_string>[ÁÃÀÂ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
@@ -10490,7 +10495,7 @@ WHERE P.INATIVO = 'N'
         <case_sensitive>N</case_sensitive>
         <in_stream_name>NOMEDETALHADO</in_stream_name>
         <is_unicode>N</is_unicode>
-        <replace_by_string>U</replace_by_string>
+        <replace_by_string>E</replace_by_string>
         <replace_string>[ÉÊÈ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
@@ -10500,7 +10505,7 @@ WHERE P.INATIVO = 'N'
         <case_sensitive>N</case_sensitive>
         <in_stream_name>NOMEDETALHADO</in_stream_name>
         <is_unicode>N</is_unicode>
-        <replace_by_string>U</replace_by_string>
+        <replace_by_string>I</replace_by_string>
         <replace_string>[ÍÎÌ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
@@ -10510,7 +10515,7 @@ WHERE P.INATIVO = 'N'
         <case_sensitive>N</case_sensitive>
         <in_stream_name>NOMEDETALHADO</in_stream_name>
         <is_unicode>N</is_unicode>
-        <replace_by_string>U</replace_by_string>
+        <replace_by_string>O</replace_by_string>
         <replace_string>[ÓÓÕÔ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
@@ -10537,9 +10542,109 @@ WHERE P.INATIVO = 'N'
       </field>
       <field>
         <case_sensitive>N</case_sensitive>
+        <in_stream_name>GRUPOPRODUTO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>A</replace_by_string>
+        <replace_string>[ÁÃÀÂ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>GRUPOPRODUTO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>E</replace_by_string>
+        <replace_string>[ÉÊÈ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>GRUPOPRODUTO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>I</replace_by_string>
+        <replace_string>[ÍÎÌ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>GRUPOPRODUTO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>O</replace_by_string>
+        <replace_string>[ÓÓÕÔ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>GRUPOPRODUTO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>U</replace_by_string>
+        <replace_string>[ÚÙÛ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
         <in_stream_name>LABORATORIO</in_stream_name>
         <is_unicode>N</is_unicode>
         <replace_string>[@*$#!?;>&lt;+]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LABORATORIO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>A</replace_by_string>
+        <replace_string>[ÁÃÀÂ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LABORATORIO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>E</replace_by_string>
+        <replace_string>[ÉÊÈ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LABORATORIO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>I</replace_by_string>
+        <replace_string>[ÍÎÌ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LABORATORIO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>O</replace_by_string>
+        <replace_string>[ÓÓÕÔ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LABORATORIO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>U</replace_by_string>
+        <replace_string>[ÚÙÛ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
         <whole_word>N</whole_word>
@@ -10564,9 +10669,118 @@ WHERE P.INATIVO = 'N'
       </field>
       <field>
         <case_sensitive>N</case_sensitive>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>A</replace_by_string>
+        <replace_string>[ÁÃÀÂ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>E</replace_by_string>
+        <replace_string>[ÉÊÈ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>I</replace_by_string>
+        <replace_string>[ÍÎÌ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>O</replace_by_string>
+        <replace_string>[ÓÓÕÔ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>U</replace_by_string>
+        <replace_string>[ÚÙÛ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>SIMILAR</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_string>[@*$#!?;>&lt;+]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
         <in_stream_name>UNIDADE</in_stream_name>
         <is_unicode>N</is_unicode>
         <replace_string>[@*$#!?;>&lt;+]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>UNIDADE</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>A</replace_by_string>
+        <replace_string>[ÁÃÀÂ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>UNIDADE</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>E</replace_by_string>
+        <replace_string>[ÉÊÈ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>UNIDADE</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>I</replace_by_string>
+        <replace_string>[ÍÎÌ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>UNIDADE</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>O</replace_by_string>
+        <replace_string>[ÓÓÕÔ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>UNIDADE</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>U</replace_by_string>
+        <replace_string>[ÚÙÛ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
         <whole_word>N</whole_word>
@@ -10644,6 +10858,56 @@ WHERE P.INATIVO = 'N'
         <in_stream_name>LOCALIZACAO</in_stream_name>
         <is_unicode>N</is_unicode>
         <replace_string>[,.;?!@#$%¨*]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LOCALIZACAO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>A</replace_by_string>
+        <replace_string>[ÁÃÀÂ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LOCALIZACAO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>E</replace_by_string>
+        <replace_string>[ÉÊÈ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LOCALIZACAO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>I</replace_by_string>
+        <replace_string>[ÍÎÌ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LOCALIZACAO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>O</replace_by_string>
+        <replace_string>[ÓÓÕÔ]</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+      </field>
+      <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>LOCALIZACAO</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>U</replace_by_string>
+        <replace_string>[ÚÙÛ]</replace_string>
         <set_empty_string>N</set_empty_string>
         <use_regex>N</use_regex>
         <whole_word>N</whole_word>
@@ -15733,6 +15997,14 @@ ORDER BY DESCRICAO</sql>
         <collator_strength>0</collator_strength>
         <presorted>N</presorted>
       </field>
+      <field>
+        <name>CODIGO_MIGRACAO</name>
+        <ascending>N</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
     </fields>
     <attributes/>
     <GUI>
@@ -17345,6 +17617,10 @@ FROM UNIDADE</sql>
       <field>
         <case_insensitive>N</case_insensitive>
         <name>ID_GRUPOCLIENTE</name>
+      </field>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>CODIGO_MIGRACAO</name>
       </field>
     </fields>
     <reject_duplicate_row>N</reject_duplicate_row>
