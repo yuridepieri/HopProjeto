@@ -106,107 +106,107 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Filter Prod</from>
       <to>Append Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter Prod</from>
       <to>Set Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Get Filial</from>
       <to>Join Filial</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Join Filial</from>
       <to>Sort Prod 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Join Prod</from>
       <to>Sel Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Prod</from>
       <to>Str Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Seq Prod</from>
       <to>Filter Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Set Prod</from>
       <to>Append Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort Prod 2</from>
       <to>Unique Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Unique Prod</from>
       <to>Seq Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter Med</from>
       <to>Append Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter Med</from>
       <to>Set Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Join Filial 3</from>
       <to>Sort Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Join Med</from>
       <to>Sel Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Rep Med</from>
       <to>Cut Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Med</from>
       <to>Str Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Seq Med</from>
       <to>Filter Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Set Med</from>
       <to>Append Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort Med</from>
       <to>Unique Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Str Med</from>
       <to>Rep Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Unique Med</from>
       <to>Seq Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Block conv</from>
@@ -381,17 +381,17 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look SGrp</from>
       <to>Look Categ</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Look Categ</from>
       <to>Look GPreco</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Look GPreco</from>
       <to>Look Lab</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Grupo</from>
@@ -421,7 +421,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Lab</from>
       <to>Look Similar</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Similaridade</from>
@@ -436,7 +436,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Similar</from>
       <to>Look Und</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>DCB</from>
@@ -446,7 +446,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Und</from>
       <to>Look Dcb</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Aliquota</from>
@@ -456,7 +456,7 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Dcb</from>
       <to>Look Icms</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Localizacao</from>
@@ -466,212 +466,212 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Look Icms</from>
       <to>Look Local</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Look Local</from>
       <to>If Null</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Null if</from>
       <to>If Null 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Look Grp</from>
       <to>Look SGrp</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>If Null</from>
       <to>Map CSOSN</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map CSOSN</from>
       <to>Map CSTICMS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map CSTICMS</from>
       <to>Map PIS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map PIS</from>
       <to>Map COFINS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map Lista</from>
       <to>Map Origem</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map Origem</from>
       <to>Map CFOP</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map CFOP</from>
       <to>Sel Prod 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Prod 2</from>
       <to>Calculator</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Calculator</from>
       <to>Ajusta Campos</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Ajusta Campos</from>
       <to>Join Filial</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter RegMS</from>
       <to>Sel RegMS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Prod 3</from>
       <to>Insert Produto</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Append Prod</from>
       <to>Fil Campos</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Seq RegMS</from>
       <to>Block RegMS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Block RegMS</from>
       <to>Insert RegistroMS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Fil Campos</from>
       <to>Filter RegMS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Fil Campos</from>
       <to>Sel Prod 3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Get Filial 3</from>
       <to>Join Filial 3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Med 2</from>
       <to>Join Filial 3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Cut Med</from>
       <to>Null Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>If Null Med</from>
       <to>Map UF Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Null Med</from>
       <to>If Null Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map Controlado</from>
       <to>Null if</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Cut Prod</from>
       <to>Map Controlado</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>If Null 2</from>
       <to>Look Grp</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Especialid Base</from>
       <to>Look Especialid</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Append Med</from>
       <to>Sel Med 3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Med 3</from>
       <to>Insert Medico</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Fil Campos</from>
       <to>Sel Prod Val Fil 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Prod Val Fil 2</from>
       <to>Add campos</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Add campos</from>
       <to>Seq Prod Filial</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Seq Prod Filial</from>
       <to>Block ProdFilial</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Block ProdFilial</from>
       <to>Insert ProdutoFilial</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Look Especialid</from>
       <to>Sel Med 2</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map UF Med</from>
       <to>If Null 3</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>If Null 3</from>
       <to>Look Especialid</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map COFINS</from>
       <to>Map IPI</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Map IPI</from>
       <to>Map Lista</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter Conv</from>
@@ -691,17 +691,17 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Sel RegMS</from>
       <to>Seq RegMS</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Produto</from>
       <to>Join Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Gen Prod</from>
       <to>Join Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sel Conv</from>
@@ -726,22 +726,22 @@ que não são convênio no Mapper GrpCli</note>
     <hop>
       <from>Medicos</from>
       <to>Join Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Gen Med</from>
       <to>Join Med</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Str Prod</from>
       <to>Rep Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Rep Prod</from>
       <to>Cut Prod</to>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Sort Conv</from>
