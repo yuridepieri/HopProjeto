@@ -34,11 +34,121 @@
       <fontsize>9</fontsize>
       <height>57</height>
       <xloc>176</xloc>
-      <yloc>32</yloc>
+      <yloc>0</yloc>
       <note>GRUPO DE PRODUTO
 
-COLOCAR ID COMO CODIGO_MIGRACAO</note>
-      <width>235</width>
+Colocar ID como CODIGO_MIGRACAO</note>
+      <width>215</width>
+    </notepad>
+    <notepad>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorred>0</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>0</fontcolorblue>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorred>0</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <height>57</height>
+      <xloc>176</xloc>
+      <yloc>720</yloc>
+      <note>LABORATÓRIO
+
+Colocar ID como CODIGO_MIGRACAO</note>
+      <width>215</width>
+    </notepad>
+    <notepad>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorred>0</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>0</fontcolorblue>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorred>0</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <height>57</height>
+      <xloc>176</xloc>
+      <yloc>944</yloc>
+      <note>GRUPO DE PREÇOS
+
+Colocar ID como CODIGO_MIGRACAO</note>
+      <width>215</width>
+    </notepad>
+    <notepad>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorred>0</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>0</fontcolorblue>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorred>0</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <height>57</height>
+      <xloc>176</xloc>
+      <yloc>288</yloc>
+      <note>SUBGRUPO
+
+Colocar ID como CODIGO_MIGRACAO</note>
+      <width>215</width>
+    </notepad>
+    <notepad>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorred>0</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>0</fontcolorblue>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorred>0</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <height>57</height>
+      <xloc>176</xloc>
+      <yloc>512</yloc>
+      <note>CATEGORIA
+
+Colocar ID como CODIGO_MIGRACAO</note>
+      <width>215</width>
+    </notepad>
+    <notepad>
+      <backgroundcolorblue>255</backgroundcolorblue>
+      <backgroundcolorgreen>255</backgroundcolorgreen>
+      <backgroundcolorred>0</backgroundcolorred>
+      <bordercolorblue>90</bordercolorblue>
+      <bordercolorgreen>58</bordercolorgreen>
+      <bordercolorred>14</bordercolorred>
+      <fontbold>N</fontbold>
+      <fontcolorblue>0</fontcolorblue>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorred>0</fontcolorred>
+      <fontitalic>N</fontitalic>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <height>57</height>
+      <xloc>176</xloc>
+      <yloc>1920</yloc>
+      <note>CONVENIO
+
+Colocar ID como CODIGO_MIGRACAOCONVENIO</note>
+      <width>275</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>255</backgroundcolorblue>
@@ -55,108 +165,8 @@ COLOCAR ID COMO CODIGO_MIGRACAO</note>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <height>26</height>
-      <xloc>192</xloc>
-      <yloc>752</yloc>
-      <note>LABORATÓRIO</note>
-      <width>89</width>
-    </notepad>
-    <notepad>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorred>0</backgroundcolorred>
-      <bordercolorblue>90</bordercolorblue>
-      <bordercolorgreen>58</bordercolorgreen>
-      <bordercolorred>14</bordercolorred>
-      <fontbold>N</fontbold>
-      <fontcolorblue>0</fontcolorblue>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorred>0</fontcolorred>
-      <fontitalic>N</fontitalic>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <height>26</height>
-      <xloc>192</xloc>
-      <yloc>976</yloc>
-      <note>GRUPO DE PREÇOS</note>
-      <width>113</width>
-    </notepad>
-    <notepad>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorred>0</backgroundcolorred>
-      <bordercolorblue>90</bordercolorblue>
-      <bordercolorgreen>58</bordercolorgreen>
-      <bordercolorred>14</bordercolorred>
-      <fontbold>N</fontbold>
-      <fontcolorblue>0</fontcolorblue>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorred>0</fontcolorred>
-      <fontitalic>N</fontitalic>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <height>26</height>
-      <xloc>192</xloc>
-      <yloc>320</yloc>
-      <note>SUBGRUPO</note>
-      <width>71</width>
-    </notepad>
-    <notepad>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorred>0</backgroundcolorred>
-      <bordercolorblue>90</bordercolorblue>
-      <bordercolorgreen>58</bordercolorgreen>
-      <bordercolorred>14</bordercolorred>
-      <fontbold>N</fontbold>
-      <fontcolorblue>0</fontcolorblue>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorred>0</fontcolorred>
-      <fontitalic>N</fontitalic>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <height>26</height>
-      <xloc>192</xloc>
-      <yloc>544</yloc>
-      <note>CATEGORIA</note>
-      <width>73</width>
-    </notepad>
-    <notepad>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorred>0</backgroundcolorred>
-      <bordercolorblue>90</bordercolorblue>
-      <bordercolorgreen>58</bordercolorgreen>
-      <bordercolorred>14</bordercolorred>
-      <fontbold>N</fontbold>
-      <fontcolorblue>0</fontcolorblue>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorred>0</fontcolorred>
-      <fontitalic>N</fontitalic>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <height>26</height>
-      <xloc>192</xloc>
-      <yloc>1968</yloc>
-      <note>CONVENIO</note>
-      <width>71</width>
-    </notepad>
-    <notepad>
-      <backgroundcolorblue>255</backgroundcolorblue>
-      <backgroundcolorgreen>255</backgroundcolorgreen>
-      <backgroundcolorred>0</backgroundcolorred>
-      <bordercolorblue>90</bordercolorblue>
-      <bordercolorgreen>58</bordercolorgreen>
-      <bordercolorred>14</bordercolorred>
-      <fontbold>N</fontbold>
-      <fontcolorblue>0</fontcolorblue>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorred>0</fontcolorred>
-      <fontitalic>N</fontitalic>
-      <fontname>Segoe UI</fontname>
-      <fontsize>9</fontsize>
-      <height>26</height>
-      <xloc>192</xloc>
-      <yloc>1424</yloc>
+      <xloc>176</xloc>
+      <yloc>1392</yloc>
       <note>UNIDADES</note>
       <width>67</width>
     </notepad>
@@ -175,7 +185,7 @@ COLOCAR ID COMO CODIGO_MIGRACAO</note>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <height>26</height>
-      <xloc>192</xloc>
+      <xloc>176</xloc>
       <yloc>1184</yloc>
       <note>LOCALIZAÇÃO</note>
       <width>91</width>
@@ -195,8 +205,8 @@ COLOCAR ID COMO CODIGO_MIGRACAO</note>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <height>26</height>
-      <xloc>192</xloc>
-      <yloc>1696</yloc>
+      <xloc>176</xloc>
+      <yloc>1664</yloc>
       <note>DCB / PRINCIPIO ATIVO</note>
       <width>137</width>
     </notepad>
@@ -1300,19 +1310,16 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>9</cut_to>
         <in_stream_name>CODIGO_MIGRACAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>10</cut_to>
         <in_stream_name>DATAMODIFICACAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1337,7 +1344,6 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1362,7 +1368,6 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1387,7 +1392,6 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1412,7 +1416,6 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1461,19 +1464,16 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>9</cut_to>
         <in_stream_name>CODIGO_MIGRACAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>10</cut_to>
         <in_stream_name>DATAMODIFICACAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1498,13 +1498,11 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>9</cut_to>
         <in_stream_name>CODIGO_MIGRACAO</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -1529,13 +1527,11 @@ LEFT JOIN CADASTRO_CIDADE CID ON CID.CODIGOCIDADE = C_END.CODIGOCIDADE</sql>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>DESCRICAO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>3</cut_to>
         <in_stream_name>UNIDADE</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -2665,6 +2661,14 @@ ORDER BY DCB</sql>
         <type>Integer</type>
       </field>
       <field>
+        <length>-1</length>
+        <name>REVISAO</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Integer</type>
+      </field>
+      <field>
         <format>#.##</format>
         <length>-1</length>
         <name>DESCONTO</name>
@@ -2677,6 +2681,41 @@ ORDER BY DCB</sql>
         <format>#.##</format>
         <length>-1</length>
         <name>DESCONTOMAXIMO</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Number</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <name>FILIAISGERARPENDENCIAETIQUETAPRECO</name>
+        <nullif>TODAS</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>String</type>
+      </field>
+      <field>
+        <format>#.##</format>
+        <length>-1</length>
+        <name>META</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Number</type>
+      </field>
+      <field>
+        <format>#.##</format>
+        <length>-1</length>
+        <name>MARGEMCRESCIMENTO</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Number</type>
+      </field>
+      <field>
+        <format>#.##</format>
+        <length>-1</length>
+        <name>VALORPONTOFIDELIDADE</name>
         <nullif>0</nullif>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -3962,12 +4001,32 @@ WHERE APAGADO = 'N'</sql>
         <stream_name>IDGRUPO</stream_name>
       </field>
       <field>
+        <column_name>REVISAO</column_name>
+        <stream_name>REVISAO</stream_name>
+      </field>
+      <field>
         <column_name>DESCONTO</column_name>
         <stream_name>DESCONTO</stream_name>
       </field>
       <field>
         <column_name>DESCONTOMAXIMO</column_name>
         <stream_name>DESCONTOMAXIMO</stream_name>
+      </field>
+      <field>
+        <column_name>FILIAISGERARPENDENCIAETIQUETAPRECO</column_name>
+        <stream_name>FILIAISGERARPENDENCIAETIQUETAPRECO</stream_name>
+      </field>
+      <field>
+        <column_name>META</column_name>
+        <stream_name>META</stream_name>
+      </field>
+      <field>
+        <column_name>MARGEMCRESCIMENTO</column_name>
+        <stream_name>MARGEMCRESCIMENTO</stream_name>
+      </field>
+      <field>
+        <column_name>VALORPONTOFIDELIDADE</column_name>
+        <stream_name>VALORPONTOFIDELIDADE</stream_name>
       </field>
       <field>
         <column_name>IDFILIAL</column_name>

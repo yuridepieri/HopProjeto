@@ -57,9 +57,9 @@
       <yloc>560</yloc>
       <note>CODIGO FORNECEDOR
 
-Colocar id como Codigo_migracao
-O Join é pelo nome do favorecido</note>
-      <width>196</width>
+Colocar ID do produto como CODIGO_MIGRACAO.
+O Join é pelo nome do favorecido.</note>
+      <width>280</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>255</backgroundcolorblue>
@@ -80,9 +80,9 @@ O Join é pelo nome do favorecido</note>
       <yloc>832</yloc>
       <note>DEPENDENTES
 
-Colocar nome favorecido como 'CLIENTE'
-Colocar nome depend como 'DEPENDENTE'</note>
-      <width>243</width>
+Colocar NOME do favorecido como CLIENTE.
+Colocar NOME do dependente como DEPENDENTE.</note>
+      <width>284</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>255</backgroundcolorblue>
@@ -103,9 +103,9 @@ Colocar nome depend como 'DEPENDENTE'</note>
       <yloc>304</yloc>
       <note>REGISTROMS ADICIONAL
 
-Colocar id produto como codigo_migracao
-Colocar Registroms como REGMS</note>
-      <width>240</width>
+Colocar ID do produto como CODIGO_MIGRACAO.
+Colocar REGISTROMS como REGMS.</note>
+      <width>280</width>
     </notepad>
   </notepads>
   <order>
@@ -962,16 +962,15 @@ WHERE F.TIPOFAVORECIDO = 'FORNECEDOR'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQLSERVER</connection>
+    <connection>MYSQL</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
     <sql>SELECT
-		B.CODIGOPRODUTO	CODIGO_MIGRACAO,
-		B.CODIGOBARRA,
-		P.FRACAOVENDA		FATOR
-FROM PRODUTO_CODIGOBARRA B
-INNER JOIN PRODUTO P ON P.CODIGOPRODUTO = B.CODIGOPRODUTO
-WHERE B.CODIGOBARRA IS NOT NULL AND B.CODIGOBARRA &lt;&gt; ''</sql>
+	ID_PRODUTO_CODIGOBARRA	CODIGO_MIGRACAO,
+	CODIGOBARRA,
+	FATOR
+FROM CODIGOBARRAPRODUTO
+WHERE CODIGOBARRAS IS NOT NULL AND CODIGOBARRAS &lt;&gt; ''</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -990,19 +989,17 @@ WHERE B.CODIGOBARRA IS NOT NULL AND B.CODIGOBARRA &lt;&gt; ''</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQLSERVER</connection>
+    <connection>MYSQL</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
-    <sql>SELECT 
-		CF.CODIGOPRODUTO		CODIGO_MIGRACAO,
-		RIGHT(TRIM(CF.CODIGOPRODUTOFORNECEDOR), 9) CODIGO,
-		C.NOME,
-		COALESCE(CF.FRACAO, 0) FATORCOMPRA
-FROM PRODUTO_FORNECEDOR CF
-LEFT JOIN FORNECEDOR F ON CF.CODIGOFORNECEDOR = F.CODIGOFORNECEDOR
-LEFT JOIN CADASTRO C ON F.CODIGOCADASTRO = C.CODIGOCADASTRO
-WHERE CF.CODIGOPRODUTOFORNECEDOR IS NOT NULL AND CF.CODIGOPRODUTOFORNECEDOR &lt;&gt; ''
-ORDER BY CF.CODIGOPRODUTO</sql>
+    <sql>SELECT
+	ID_PRODUTO_CODIGOFORNECEDOR	CODIGO_MIGRACAO,
+	F.NOME,
+	RIGHT(TRIM(CODIGO), 9)	CODIGO,
+	COALESCE(FATORCOMPRA, 0) FATORCOMPRA
+FROM CODIGOFORNECEDOR CF
+LEFT JOIN FAVORECIDO F ON CF.ID_FAVORECIDO = F.ID
+WHERE CF.CODIGO IS NOT NULL AND CF.CODIGO &lt;&gt; ''</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -1029,17 +1026,7 @@ ORDER BY CF.CODIGOPRODUTO</sql>
 		D.NOME			DEPENDENTE,
 		D.CPF
 FROM DEPENDENTES D
-LEFT JOIN CLIENTES C ON C.CLIENTES_ID = D.CLIENTES_ID
-
-
-/*SELECT
-	DEPENDENTE,
-	-- CPF
-	NOME
-FROM 
-DEPENDENTE D
-LEFT JOIN CLIENTE C ON C.CLIENTES_ID = D.CLIENTES_ID
-*/</sql>
+LEFT JOIN CLIENTES C ON C.CLIENTES_ID = D.CLIENTES_ID</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -1468,7 +1455,6 @@ WHERE REGISTRO_MS IS NOT NULL AND REGISTRO_MS &lt;&gt; ''</sql>
             <value>
               <isnull>N</isnull>
               <length>-1</length>
-              <mask/>
               <name>constant</name>
               <precision>-1</precision>
               <text>''</text>

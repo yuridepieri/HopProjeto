@@ -383,11 +383,6 @@ COLOCAR ID COMO CODIGO_MIGRACAO</note>
       <enabled>N</enabled>
     </hop>
     <hop>
-      <from>If Null 2</from>
-      <to>Join Pagar 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Sel Estoque 4</from>
       <to>Sel Estoque 5</to>
       <enabled>Y</enabled>
@@ -466,6 +461,11 @@ COLOCAR ID COMO CODIGO_MIGRACAO</note>
       <from>Filter Convenio</from>
       <to>Seq Convenio</to>
       <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>If Null 2</from>
+      <to>Join Pagar 2</to>
+      <enabled>Y</enabled>
     </hop>
   </order>
   <transform>
@@ -707,33 +707,18 @@ ORDER BY CODIGO_MIGRACAO</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQLSERVER</connection>
+    <connection>MYSQL</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
     <sql>SELECT 
-  C.CODIGOCADASTRO AS CODIGO_MIGRACAO, --VERIFICAR SE FOI IMPORTADO OS FAVORECIDOS DAS DEPESAS
-  CASE 
-	WHEN FV.CODIGOGRUPO = 27 THEN F.DOCUMENTO 
-	ELSE CG2.NOMEGRUPO 
-  END AS DOCUMENTO,
-  CASE 
-	WHEN FV.VALOR &lt; 0 THEN FV.VALOR*-1 
-	ELSE FV.VALOR 
-  END AS VALOR,
-  DATALANCAMENTO AS DATAEMISSAO,
-  DATAVENCIMENTO AS VENCIMENTO,
-  CASE WHEN FV.CODIGOGRUPO = 27 THEN 'F' ELSE 'D' END AS SUBTIPO
-FROM FINANCEIRO_VALOR FV 
-  INNER JOIN FINANCEIRO F ON F.CODIGOFINANCEIRO = FV.CODIGOFINANCEIRO 
-  INNER JOIN CADASTRO C ON F.CODIGOCADASTRO = C.CODIGOCADASTRO
-  INNER JOIN CONTA_GRUPO CG2 ON CG2.CODIGOGRUPO = FV.CODIGOGRUPO
-WHERE FV.SALDO &lt;&gt; 0
-AND FV.CODIGOCONTA = 3 
-AND (FV.CODIGOGRUPO = 27 OR FV.CODIGOGRUPO IN (SELECT CG.CODIGOGRUPO FROM CONTA_GRUPO CG WHERE TIPOCONTABIL = 4 AND VISUALIZAMOVIMENTO = 1))
-AND F.ELIMINADO = 0
-AND FV.ELIMINADO = 0
-AND FV.DATAVENCIMENTO >= '01-12-2024'
-ORDER BY FV.CODIGOGRUPO, FV.DATAVENCIMENTO, C.NOME, F.DOCUMENTO;</sql>
+	ID_FAVORECIDO	CODIGO_MIGRACAO,
+	DOCUMENTO,
+	VALOR,
+	DATAEMISSAO,
+	VENCIMENTO,
+	-- SUBTIPO -- 'F' (DESPESA FORNECEDOR), 'D' (DESPESA VARIÁVEL)
+FROM CONTA
+WHERE VALOR &lt;&gt; 0</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -752,15 +737,14 @@ ORDER BY FV.CODIGOGRUPO, FV.DATAVENCIMENTO, C.NOME, F.DOCUMENTO;</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQLSERVER</connection>
+    <connection>MYSQL</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
     <sql>SELECT
-	P.CODIGOPRODUTO	CODIGO_MIGRACAO,
-	CAST(PE.ESTOQUE AS INTEGER) QUANTIDADE
-FROM PRODUTO_ESTOQUE PE
-LEFT JOIN PRODUTO P ON PE.CODIGOPRODUTO = P.CODIGOPRODUTO
-WHERE PE.ESTOQUE >0</sql>
+	ID_PRODUTO	CODIGO_MIGRACAO,
+	QUANTIDADE
+FROM LOTEMEDICAMENTO
+WHERE QUANTIDADE >0</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -1828,22 +1812,14 @@ ORDER BY CODIGO_MIGRACAO</sql>
     </partitioning>
     <fields>
       <field>
-        <currency/>
-        <decimal/>
         <format>yyyy/MM/dd HH:mm:ss</format>
-        <group/>
         <length>-1</length>
         <name>DATAMODIFICACAO</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>IDUSUARIO</name>
         <nullif>0</nullif>
@@ -1852,10 +1828,7 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>#</format>
-        <group/>
         <length>-1</length>
         <name>LOTE</name>
         <nullif>INT000</nullif>
@@ -1864,46 +1837,29 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>yyyy-MM-dd HH:mm:ss</format>
-        <group/>
         <length>-1</length>
         <name>FABRICACAO</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>yyyy-MM-dd HH:mm:ss</format>
-        <group/>
         <length>-1</length>
         <name>VALIDADE</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>DESCRICAO</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>PRECOMAXIMO</name>
         <nullif>0</nullif>
@@ -1912,10 +1868,6 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Number</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>ISINTERNO</name>
         <nullif>1</nullif>
@@ -1924,10 +1876,6 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>REVISAO</name>
         <nullif>0</nullif>
@@ -1936,22 +1884,14 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>yyyy-MM-dd HH:mm:ss</format>
-        <group/>
         <length>-1</length>
         <name>DATAINICIAL</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>QUANTIDADEINICIAL</name>
         <nullif>0</nullif>
@@ -1960,10 +1900,6 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Number</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>IDGRUPO</name>
         <nullif>0</nullif>
@@ -1972,22 +1908,13 @@ ORDER BY CODIGO_MIGRACAO</sql>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>ID_REGISTROMS</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>CUSTOMEDIOPONDERADOINICIAL</name>
         <nullif>0</nullif>
@@ -4742,24 +4669,17 @@ AND LISTACONTROLADO = '---'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQLSERVER</connection>
+    <connection>MYSQL</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
     <sql>SELECT 
-	R.CLIENTES_ID		CODIGO_MIGRACAO,
-	-- C.NOME, 
-	R.NUMNOTA		DOCUMENTO,
-	R.VENCIMENTO VENCIMENTO,
-	SUM(R.VALORTOTAL) VALOR,
-	-- 1 FILIAL,
-	CAST(R.DATAHORA AS DATE) DATAEMISSAO
-FROM RECEBER R
-LEFT JOIN CLIENTES C ON R.CLIENTES_ID = C.CLIENTES_ID
--- LEFT JOIN PRODUTO P ON P.PRODUTO_ID = R.PRODUTO_ID
-WHERE R.DATA_BAIXA IS NULL AND R.VALORTOTAL >0
-AND R.EMPRESA_ID IN (4) 
-GROUP BY R.CLIENTES_ID, R.NUMNOTA, R.DATAHORA, R.VENCIMENTO
-ORDER BY R.CLIENTES_ID</sql>
+	ID_FAVORECIDO	CODIGO_MIGRACAO,
+	DOCUMENTO,
+	VENCIMENTO,
+	VALOR,
+	DATAEMISSAO
+FROM CONTA
+WHERE VALOR &lt;&gt; 0</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
@@ -4778,26 +4698,17 @@ ORDER BY R.CLIENTES_ID</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SQLSERVER</connection>
+    <connection>MYSQL</connection>
     <execute_each_row>N</execute_each_row>
     <limit>0</limit>
     <sql>SELECT
-	F.CODIGOCADASTRO		CODIGO_MIGRACAO,
-	DATAVENCIMENTO AS VENCIMENTO,
-	V.CODIGOVENDA AS DOCUMENTO,
+	ID_FAVORECIDO	CODIGO_MIGRACAO,
+	VENCIMENTO,
+	DOCUMENTO,
 	CAST(FV.SALDO AS NUMERIC(16,2)) VALOR,
-	DATALANCAMENTO AS DATAEMISSAO
-FROM FINANCEIRO F
-LEFT JOIN FINANCEIRO_VALOR FV ON F.CODIGOFINANCEIRO = FV.CODIGOFINANCEIRO
-LEFT JOIN VENDA V ON F.CODIGOLANCAMENTO = V.CODIGOLANCAMENTO
-WHERE SALDO &lt;&gt;0
-AND F.ELIMINADO = 0
-AND FV.ELIMINADO = 0
-AND FV.CODIGOCONTA = 2
-AND FV.CODIGOGRUPO = 17
---AND FV.CODIGOVALOR =
---AND F.CODIGOCADASTRO = 
-ORDER BY F.CODIGOCADASTRO;</sql>
+	DATAEMISSAO
+FROM CONTA
+WHERE SALDO &lt;&gt; 0.00</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>

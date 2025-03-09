@@ -57,9 +57,9 @@
       <yloc>560</yloc>
       <note>CODIGO FORNECEDOR
 
-Colocar id como Codigo_migracao
-O Join é pelo nome do favorecido</note>
-      <width>196</width>
+Colocar ID como CODIGO_MIGRACAO.
+O Join é pelo nome do favorecido.</note>
+      <width>217</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>255</backgroundcolorblue>
@@ -80,9 +80,9 @@ O Join é pelo nome do favorecido</note>
       <yloc>832</yloc>
       <note>DEPENDENTES
 
-Colocar nome favorecido como 'CLIENTE'
-Colocar nome depend como 'DEPENDENTE'</note>
-      <width>243</width>
+Colocar NOME do favorecido como CLIENTE.
+Colocar NOME do dependente como DEPENDENTE.</note>
+      <width>284</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>255</backgroundcolorblue>
@@ -103,9 +103,9 @@ Colocar nome depend como 'DEPENDENTE'</note>
       <yloc>304</yloc>
       <note>REGISTROMS ADICIONAL
 
-Colocar id produto como codigo_migracao
-Colocar Registroms como REGMS</note>
-      <width>240</width>
+Colocar ID do produto como CODIGO_MIGRACAO.
+Colocar REGISTROMS como REGMS.</note>
+      <width>280</width>
     </notepad>
   </notepads>
   <order>

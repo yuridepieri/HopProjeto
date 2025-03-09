@@ -25,7 +25,7 @@
       "description" : "Nosso banco"
     }, {
       "name" : "1_MYSQL_DB",
-      "value" : "bancobig",
+      "value" : "537_big",
       "description" : "Sistema concorrente"
     }, {
       "name" : "1_MYSQL_CONNECTION",

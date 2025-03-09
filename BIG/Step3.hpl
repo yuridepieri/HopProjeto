@@ -57,9 +57,9 @@
       <yloc>544</yloc>
       <note>CLIENTES
 
-Colocar Codigo das empresas
-que não são convênio no Mapper GrpCli</note>
-      <width>223</width>
+Colocar Codigo das empresas que não são convênio no Mapper GrpCli
+Colocar CodigoConvenio como COD_EMPRESA</note>
+      <width>383</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>255</backgroundcolorblue>
@@ -75,11 +75,15 @@ que não são convênio no Mapper GrpCli</note>
       <fontitalic>N</fontitalic>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
-      <height>26</height>
-      <xloc>272</xloc>
-      <yloc>144</yloc>
-      <note>PRODUTO</note>
-      <width>65</width>
+      <height>89</height>
+      <xloc>256</xloc>
+      <yloc>80</yloc>
+      <note>PRODUTO
+
+Colocar ID como codigo_migracao.
+Mapear grupo, subgrupo, categoria, laboratorio, unidade, aliquota, localização, Grupo de preço
+é pelo nome</note>
+      <width>512</width>
     </notepad>
     <notepad>
       <backgroundcolorblue>128</backgroundcolorblue>
@@ -9516,7 +9520,7 @@ FROM LOCALIZACAOPRODUTO</sql>
         <target_value>DF</target_value>
       </field>
     </fields>
-    <non_match_default>SP</non_match_default>
+    <non_match_default>SC</non_match_default>
     <attributes/>
     <GUI>
       <xloc>1120</xloc>
@@ -9575,7 +9579,7 @@ FROM LOCALIZACAOPRODUTO</sql>
 FROM MEDICO
 WHERE APAGADO = 'N'
 GROUP BY NOME, CRM
-ORDER BY MEDICO_ID;</sql>
+ORDER BY MEDICO_ID</sql>
     <variables_active>N</variables_active>
     <attributes/>
     <GUI>
