@@ -2731,17 +2731,73 @@ ORDER BY DCB</sql>
     </partitioning>
     <fields>
       <field>
+        <currency/>
+        <decimal/>
         <format>#</format>
+        <group/>
         <length>-1</length>
         <name>CODIGO_MIGRACAO</name>
+        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
+        <currency/>
+        <decimal/>
         <format>dd/MM/yyyy</format>
+        <group/>
         <length>-1</length>
         <name>DATAMODIFICACAO</name>
+        <nullif/>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>String</type>
+      </field>
+      <field>
+        <currency/>
+        <decimal/>
+        <format>#</format>
+        <group/>
+        <length>-1</length>
+        <name>IDUSUARIO</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Integer</type>
+      </field>
+      <field>
+        <currency/>
+        <decimal/>
+        <format>#</format>
+        <group/>
+        <length>-1</length>
+        <name>REVISAO</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Integer</type>
+      </field>
+      <field>
+        <currency/>
+        <decimal/>
+        <format>#</format>
+        <group/>
+        <length>-1</length>
+        <name>IDGRUPO</name>
+        <nullif>0</nullif>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <type>Integer</type>
+      </field>
+      <field>
+        <currency/>
+        <decimal/>
+        <format/>
+        <group/>
+        <length>-1</length>
+        <name>TIPOATUALIZACAO</name>
+        <nullif>CUSTO/MARGEM/VENDA</nullif>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
