@@ -15655,9 +15655,11 @@ WHERE P.INATIVO = 'N'
       <schema_name/>
     </partitioning>
     <connection>MYSQL</connection>
-    <counter_name>ger_fav</counter_name>
+    <counter_name>seq_cli</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
+    <seqname/>
     <start_at>${LAST_ID}</start_at>
     <use_counter>Y</use_counter>
     <use_database>N</use_database>
@@ -15679,9 +15681,11 @@ WHERE P.INATIVO = 'N'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <counter_name>ger_conv</counter_name>
+    <connection/>
+    <counter_name>seq_conv_cli</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>${LAST_ID_CONV}</start_at>
     <use_counter>Y</use_counter>
@@ -15705,9 +15709,10 @@ WHERE P.INATIVO = 'N'
       <schema_name/>
     </partitioning>
     <connection>DESTINO</connection>
-    <counter_name>ger_end</counter_name>
+    <counter_name>seq_end_cli</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>${LAST_ID_END}</start_at>
     <use_counter>Y</use_counter>
@@ -15780,9 +15785,11 @@ WHERE P.INATIVO = 'N'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <counter_name>SEQ_PRODFIL</counter_name>
+    <connection/>
+    <counter_name>seq_prodfil</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>11</start_at>
     <use_counter>Y</use_counter>

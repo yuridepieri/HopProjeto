@@ -2731,34 +2731,23 @@ ORDER BY DCB</sql>
     </partitioning>
     <fields>
       <field>
-        <currency/>
-        <decimal/>
         <format>#</format>
-        <group/>
         <length>-1</length>
         <name>CODIGO_MIGRACAO</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>dd/MM/yyyy</format>
-        <group/>
         <length>-1</length>
         <name>DATAMODIFICACAO</name>
-        <nullif/>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
         <type>String</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>#</format>
-        <group/>
         <length>-1</length>
         <name>IDUSUARIO</name>
         <nullif>0</nullif>
@@ -2767,10 +2756,7 @@ ORDER BY DCB</sql>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>#</format>
-        <group/>
         <length>-1</length>
         <name>REVISAO</name>
         <nullif>0</nullif>
@@ -2779,10 +2765,7 @@ ORDER BY DCB</sql>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
         <format>#</format>
-        <group/>
         <length>-1</length>
         <name>IDGRUPO</name>
         <nullif>0</nullif>
@@ -2791,10 +2774,6 @@ ORDER BY DCB</sql>
         <type>Integer</type>
       </field>
       <field>
-        <currency/>
-        <decimal/>
-        <format/>
-        <group/>
         <length>-1</length>
         <name>TIPOATUALIZACAO</name>
         <nullif>CUSTO/MARGEM/VENDA</nullif>
@@ -7909,9 +7888,11 @@ ORDER BY CODDCB</sql>
       <schema_name/>
     </partitioning>
     <connection>DESTINO</connection>
-    <counter_name>ger_conv</counter_name>
+    <counter_name>seq_conv</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
+    <seqname/>
     <start_at>${LAST_ID}</start_at>
     <use_counter>Y</use_counter>
     <use_database>N</use_database>
@@ -7934,9 +7915,11 @@ ORDER BY CODDCB</sql>
       <schema_name/>
     </partitioning>
     <connection>MYSQL</connection>
-    <counter_name>ger_dcb</counter_name>
+    <counter_name>seq_dcb</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
+    <seqname/>
     <start_at>${LAST_ID_DCB}</start_at>
     <use_counter>Y</use_counter>
     <use_database>N</use_database>
@@ -7959,9 +7942,10 @@ ORDER BY CODDCB</sql>
       <schema_name/>
     </partitioning>
     <connection>DESTINO</connection>
-    <counter_name>ger_end</counter_name>
+    <counter_name>seq_end_conv</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>${LAST_ID_END}</start_at>
     <use_counter>Y</use_counter>
@@ -9993,7 +9977,7 @@ GROUP BY UNIDADE</sql>
       <schema_name/>
     </partitioning>
     <connection>MYSQL</connection>
-    <counter_name>ger_grp</counter_name>
+    <counter_name>seq_grp</counter_name>
     <increment_by>1</increment_by>
     <max_value>999999999</max_value>
     <start_at>1</start_at>

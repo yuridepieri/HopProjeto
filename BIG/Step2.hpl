@@ -481,67 +481,56 @@ INSERT INTO GRUPOCLIENTE(ID, DATAMODIFICACAO, DESCRICAO, IDUSUARIO, IDFILIAL, RE
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>NOME</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>20</cut_to>
         <in_stream_name>CEP</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>CIDADE</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>2</cut_to>
         <in_stream_name>ESTADO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>ENDERECO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>15</cut_to>
         <in_stream_name>NUMERO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>COMPLEMENTO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>150</cut_to>
         <in_stream_name>BAIRRO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>8</cut_to>
         <in_stream_name>TIPOENDERECO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>8</cut_to>
         <in_stream_name>FINALIDADEENDERECO</in_stream_name>
-        <out_stream_name/>
       </field>
       <field>
         <cut_from>0</cut_from>
         <cut_to>60</cut_to>
         <in_stream_name>CAIXAPOSTAL</in_stream_name>
-        <out_stream_name/>
       </field>
     </fields>
     <attributes/>
@@ -4296,9 +4285,10 @@ WHERE APAGADO ='N'</sql>
       <schema_name/>
     </partitioning>
     <connection>DESTINO</connection>
-    <counter_name>ger_end</counter_name>
+    <counter_name>seq_end_forne</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>${LAST_ID_END}</start_at>
     <use_counter>Y</use_counter>
@@ -4347,8 +4337,11 @@ WHERE APAGADO ='N'</sql>
       <schema_name/>
     </partitioning>
     <connection>MYSQL</connection>
+    <counter_name>seq_forne</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
+    <seqname/>
     <start_at>${LAST_ID}</start_at>
     <use_counter>Y</use_counter>
     <use_database>N</use_database>
@@ -4372,7 +4365,7 @@ WHERE APAGADO ='N'</sql>
     </partitioning>
     <connection>MYSQL</connection>
     <counter_name>seq_func</counter_name>
-    <increment_by>11</increment_by>
+    <increment_by>10</increment_by>
     <max_value>999999999</max_value>
     <start_at>${LAST_ID_FUNC}</start_at>
     <use_counter>Y</use_counter>

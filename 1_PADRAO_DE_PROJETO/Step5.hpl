@@ -6376,11 +6376,13 @@ WHERE SALDO &lt;&gt; 0.00</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <connection/>
     <counter_name>seq_lotemovimento</counter_name>
-    <increment_by>11</increment_by>
+    <increment_by>10</increment_by>
     <max_value>999999999</max_value>
+    <schema/>
     <seqname>SEQ_</seqname>
-    <start_at>10</start_at>
+    <start_at>11</start_at>
     <use_counter>Y</use_counter>
     <use_database>N</use_database>
     <valuename>ID</valuename>

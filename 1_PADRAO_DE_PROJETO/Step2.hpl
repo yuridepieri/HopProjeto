@@ -4316,6 +4316,7 @@ FROM FUNCIONARIO</sql>
       <schema_name/>
     </partitioning>
     <connection>MYSQL</connection>
+    <counter_name>seq_forne</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
     <start_at>${LAST_ID}</start_at>
@@ -4341,7 +4342,7 @@ FROM FUNCIONARIO</sql>
     </partitioning>
     <connection>MYSQL</connection>
     <counter_name>seq_func</counter_name>
-    <increment_by>11</increment_by>
+    <increment_by>10</increment_by>
     <max_value>999999999</max_value>
     <start_at>${LAST_ID_FUNC}</start_at>
     <use_counter>Y</use_counter>
@@ -5612,7 +5613,9 @@ FROM FUNCIONARIO</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <count_field/>
     <count_rows>N</count_rows>
+    <error_description/>
     <fields>
       <field>
         <case_insensitive>N</case_insensitive>
