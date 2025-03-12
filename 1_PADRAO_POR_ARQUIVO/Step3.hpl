@@ -8922,299 +8922,225 @@ WHERE P.INATIVO = 'N'
     <fields>
       <field>
         <name>CODIGO_MIGRACAOCONVENIO</name>
-        <rename/>
       </field>
       <field>
         <name>CODIGO_MIGRACAO</name>
-        <rename/>
       </field>
       <field>
         <name>NOME</name>
-        <rename/>
       </field>
       <field>
         <name>CPFCNPJ</name>
-        <rename/>
       </field>
       <field>
         <name>RGINSCRICAOESTADUAL</name>
-        <rename/>
       </field>
       <field>
         <name>TELEFONE</name>
-        <rename/>
       </field>
       <field>
         <name>JUROSDIASATRASO</name>
-        <rename/>
       </field>
       <field>
         <name>OBSERVACAO</name>
-        <rename/>
       </field>
       <field>
         <name>DIALIMITEVENDA</name>
-        <rename/>
       </field>
       <field>
         <name>DIAVENCIMENTO</name>
-        <rename/>
       </field>
       <field>
         <name>DESCONTO</name>
-        <rename/>
       </field>
       <field>
         <name>ATIVO</name>
-        <rename/>
       </field>
       <field>
         <name>LIMITECREDITO</name>
-        <rename/>
       </field>
       <field>
         <name>NOMEDOPAI</name>
-        <rename/>
       </field>
       <field>
         <name>NOMEDAMAE</name>
-        <rename/>
       </field>
       <field>
         <name>SEXO</name>
-        <rename/>
       </field>
       <field>
         <name>ANOTACOES</name>
-        <rename/>
       </field>
       <field>
         <name>CELULAR</name>
-        <rename/>
       </field>
       <field>
         <name>EMAIL</name>
-        <rename/>
       </field>
       <field>
         <name>MULTA</name>
-        <rename/>
       </field>
       <field>
         <name>DATAMODIFICACAO</name>
-        <rename/>
       </field>
       <field>
         <name>TIPOFAVORECIDO</name>
-        <rename/>
       </field>
       <field>
         <name>ORGAOEMISSOR</name>
-        <rename/>
       </field>
       <field>
         <name>INSCRICAOMUNICIPAL</name>
-        <rename/>
       </field>
       <field>
         <name>CADASTROSPC</name>
-        <rename/>
       </field>
       <field>
         <name>SPC</name>
-        <rename/>
       </field>
       <field>
         <name>QTDDIASBLOQUEIO</name>
-        <rename/>
       </field>
       <field>
         <name>ESTADOCIVIL</name>
-        <rename/>
       </field>
       <field>
         <name>QUANTIDADEDIASPAGTO</name>
-        <rename/>
       </field>
       <field>
         <name>IDENTIDADECONJUGE</name>
-        <rename/>
       </field>
       <field>
         <name>NASCIMENTOCONJUGE</name>
-        <rename/>
       </field>
       <field>
         <name>BLOQUEADO</name>
-        <rename/>
       </field>
       <field>
         <name>PERCENTUALCONVENIO</name>
-        <rename/>
       </field>
       <field>
         <name>PERCENTUALCREDIARIO</name>
-        <rename/>
       </field>
       <field>
         <name>PROMOCAO</name>
-        <rename/>
       </field>
       <field>
         <name>CARTAOFIDELIDADE</name>
-        <rename/>
       </field>
       <field>
         <name>MOTIVOBLOQUEIO</name>
-        <rename/>
       </field>
       <field>
         <name>IDUSUARIO</name>
-        <rename/>
       </field>
       <field>
         <name>QTDDIASBLOQUEIOCONVENIO</name>
-        <rename/>
       </field>
       <field>
         <name>DIAFECHAMENTO</name>
-        <rename/>
       </field>
       <field>
         <name>DIAVENCIMENTOCONVENIO</name>
-        <rename/>
       </field>
       <field>
         <name>DATACADASTRO</name>
-        <rename/>
       </field>
       <field>
         <name>SALARIO</name>
-        <rename/>
       </field>
       <field>
         <name>TIPOFARMACIA</name>
-        <rename/>
       </field>
       <field>
         <name>PERMITIRCREDIARIO</name>
-        <rename/>
       </field>
       <field>
         <name>NUMEROMAXIMOPARCELAS</name>
-        <rename/>
       </field>
       <field>
         <name>DESCONTOTELEENTREGA</name>
-        <rename/>
       </field>
       <field>
         <name>CUSTODIADIARIA</name>
-        <rename/>
       </field>
       <field>
         <name>EMPRESACONVENIO</name>
-        <rename/>
       </field>
       <field>
         <name>IDGRUPO</name>
-        <rename/>
       </field>
       <field>
         <name>CADASTROCONVENIOWEB</name>
-        <rename/>
       </field>
       <field>
         <name>STATUSCONVENIOWEB</name>
-        <rename/>
       </field>
       <field>
         <name>PERCENTUALADICIONALFORMULASCONVENIO</name>
-        <rename/>
       </field>
       <field>
         <name>PERCENTUALCOPARTICIPACAO</name>
-        <rename/>
       </field>
       <field>
         <name>PERCENTUALCOPARTICIPACAOFAVORECIDO</name>
-        <rename/>
       </field>
       <field>
         <name>GERACONVENIODIFERENCAAUTOMATICO</name>
-        <rename/>
       </field>
       <field>
         <name>DESCONSIDERARPEDIDO</name>
-        <rename/>
       </field>
       <field>
         <name>IDUSUARIOCADASTRO</name>
-        <rename/>
       </field>
       <field>
         <name>QTDDIASINICIOCOBRANCAJUROS</name>
-        <rename/>
       </field>
       <field>
         <name>EMPRESACONVENIOAPLICADESCADICIONAL</name>
-        <rename/>
       </field>
       <field>
         <name>TERMOLGPDACEITO</name>
-        <rename/>
       </field>
       <field>
         <name>USACONVENIOWEB</name>
-        <rename/>
       </field>
       <field>
         <name>BENEFICIARIOCOMISSAO</name>
-        <rename/>
       </field>
       <field>
         <name>INCLUSAOSPC</name>
-        <rename/>
       </field>
       <field>
         <name>CONTATADO</name>
-        <rename/>
       </field>
       <field>
         <name>NOMEFANTASIA</name>
-        <rename/>
       </field>
       <field>
         <name>FAX</name>
-        <rename/>
       </field>
       <field>
         <name>REVISAO</name>
-        <rename/>
       </field>
       <field>
         <name>UFEMISSOR</name>
-        <rename/>
       </field>
       <field>
         <name>ORGAOEXPEDITOR</name>
-        <rename/>
       </field>
       <field>
         <name>TIPODOCUMENTO</name>
-        <rename/>
       </field>
       <field>
         <name>IDFILIAL</name>
-        <rename/>
       </field>
       <field>
         <name>ID_GRUPOCLIENTE</name>
-        <rename/>
       </field>
       <field>
         <name>ID</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -15480,6 +15406,14 @@ ORDER BY DESCRICAO</sql>
     <unique_rows>N</unique_rows>
     <fields>
       <field>
+        <name>CODIGOBARRAS</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
         <name>NOME</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
@@ -17008,8 +16942,14 @@ FROM UNIDADE</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <count_field/>
     <count_rows>N</count_rows>
+    <error_description/>
     <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>CODIGOBARRAS</name>
+      </field>
       <field>
         <case_insensitive>N</case_insensitive>
         <name>NOME</name>

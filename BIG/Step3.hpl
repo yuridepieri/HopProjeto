@@ -15658,8 +15658,6 @@ WHERE P.INATIVO = 'N'
     <counter_name>seq_cli</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
-    <schema/>
-    <seqname/>
     <start_at>${LAST_ID}</start_at>
     <use_counter>Y</use_counter>
     <use_database>N</use_database>
@@ -15681,11 +15679,9 @@ WHERE P.INATIVO = 'N'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
     <counter_name>seq_conv_cli</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
-    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>${LAST_ID_CONV}</start_at>
     <use_counter>Y</use_counter>
@@ -15712,7 +15708,6 @@ WHERE P.INATIVO = 'N'
     <counter_name>seq_end_cli</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
-    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>${LAST_ID_END}</start_at>
     <use_counter>Y</use_counter>
@@ -15785,11 +15780,9 @@ WHERE P.INATIVO = 'N'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection/>
     <counter_name>seq_prodfil</counter_name>
     <increment_by>10</increment_by>
     <max_value>999999999</max_value>
-    <schema/>
     <seqname>SEQ_</seqname>
     <start_at>11</start_at>
     <use_counter>Y</use_counter>
@@ -16158,6 +16151,14 @@ ORDER BY DESCRICAO</sql>
     <compress_variable/>
     <unique_rows>N</unique_rows>
     <fields>
+      <field>
+        <name>CODIGOBARRAS</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
       <field>
         <name>NOME</name>
         <ascending>Y</ascending>
@@ -17687,8 +17688,14 @@ FROM UNIDADE</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <count_field/>
     <count_rows>N</count_rows>
+    <error_description/>
     <fields>
+      <field>
+        <case_insensitive>N</case_insensitive>
+        <name>CODIGOBARRAS</name>
+      </field>
       <field>
         <case_insensitive>N</case_insensitive>
         <name>NOME</name>
